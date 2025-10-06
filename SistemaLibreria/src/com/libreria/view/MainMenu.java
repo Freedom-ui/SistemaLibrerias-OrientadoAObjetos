@@ -19,6 +19,7 @@ public class MainMenu extends JFrame {
 
     public MainMenu() {
         initComponents();
+        setLocationRelativeTo(null);
         
         btnBooks.addActionListener(e -> {
             new BookWindow().setVisible(true);
@@ -53,6 +54,7 @@ public class MainMenu extends JFrame {
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setName("Gestion de Libreria"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
 
         pnlPanel.setBackground(new java.awt.Color(51, 51, 51));
@@ -68,7 +70,7 @@ public class MainMenu extends JFrame {
         btnBooks.setForeground(new java.awt.Color(255, 255, 255));
         btnBooks.setText("Libros");
         btnBooks.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        btnBooks.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBooks.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnBooks.setFocusable(false);
 
         btnSales.setBackground(new java.awt.Color(51, 51, 51));
@@ -76,7 +78,7 @@ public class MainMenu extends JFrame {
         btnSales.setForeground(new java.awt.Color(255, 255, 255));
         btnSales.setText("Ventas");
         btnSales.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        btnSales.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSales.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnSales.setFocusable(false);
 
         btnClients.setBackground(new java.awt.Color(51, 51, 51));
@@ -84,7 +86,7 @@ public class MainMenu extends JFrame {
         btnClients.setForeground(new java.awt.Color(255, 255, 255));
         btnClients.setText("Clientes");
         btnClients.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        btnClients.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClients.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnClients.setFocusable(false);
 
         javax.swing.GroupLayout pnlPanelLayout = new javax.swing.GroupLayout(pnlPanel);

@@ -19,6 +19,7 @@ public class ClientWindow extends JFrame {
      */
     public ClientWindow() {
         initComponents();
+        setLocationRelativeTo(null);
         
         btnBackMenu.addActionListener(e -> {
             new MainMenu().setVisible(true);
@@ -42,7 +43,6 @@ public class ClientWindow extends JFrame {
         BotonEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         ListaLibros = new javax.swing.JTable();
-        BotonVolver = new javax.swing.JButton();
         TituloAñadir = new javax.swing.JLabel();
         lblTitle1 = new javax.swing.JLabel();
         TextFieldNombreAñadir = new javax.swing.JTextField();
@@ -54,11 +54,15 @@ public class ClientWindow extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clientes");
         setLocation(new java.awt.Point(550, 240));
+        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
 
         pnlPanel.setBackground(new java.awt.Color(51, 51, 51));
-        pnlPanel.setPreferredSize(new java.awt.Dimension(600, 600));
+        pnlPanel.setMaximumSize(new java.awt.Dimension(800, 600));
+        pnlPanel.setMinimumSize(new java.awt.Dimension(800, 600));
+        pnlPanel.setPreferredSize(new java.awt.Dimension(800, 600));
 
         btnBackMenu.setBackground(new java.awt.Color(51, 51, 51));
         btnBackMenu.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -69,7 +73,7 @@ public class ClientWindow extends JFrame {
         btnBackMenu.setFocusable(false);
 
         TextFieldPrecioAñadir.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        TextFieldPrecioAñadir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        TextFieldPrecioAñadir.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         TextFieldPrecioAñadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextFieldPrecioAñadirActionPerformed(evt);
@@ -137,14 +141,6 @@ public class ClientWindow extends JFrame {
             ListaLibros.getColumnModel().getColumn(3).setPreferredWidth(1);
         }
 
-        BotonVolver.setBackground(new java.awt.Color(51, 51, 51));
-        BotonVolver.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        BotonVolver.setForeground(new java.awt.Color(255, 255, 255));
-        BotonVolver.setText("< Volver");
-        BotonVolver.setBorder(null);
-        BotonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        BotonVolver.setFocusable(false);
-
         TituloAñadir.setBackground(new java.awt.Color(51, 51, 51));
         TituloAñadir.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         TituloAñadir.setForeground(new java.awt.Color(255, 255, 255));
@@ -158,7 +154,7 @@ public class ClientWindow extends JFrame {
         lblTitle1.setOpaque(true);
 
         TextFieldNombreAñadir.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        TextFieldNombreAñadir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        TextFieldNombreAñadir.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         TextFieldNombreAñadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextFieldNombreAñadirActionPerformed(evt);
@@ -191,7 +187,7 @@ public class ClientWindow extends JFrame {
         lblTitle5.setOpaque(true);
 
         TextFieldAutorAñadir.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        TextFieldAutorAñadir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        TextFieldAutorAñadir.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         TextFieldAutorAñadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextFieldAutorAñadirActionPerformed(evt);
@@ -203,90 +199,72 @@ public class ClientWindow extends JFrame {
         pnlPanelLayout.setHorizontalGroup(
             pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TituloAñadir)
                     .addGroup(pnlPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnBackMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pnlPanelLayout.createSequentialGroup()
-                            .addGap(115, 115, 115)
-                            .addComponent(TextFieldPrecioAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPanelLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(TextFieldNombreAñadir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TextFieldAutorAñadir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(355, Short.MAX_VALUE))
-            .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlPanelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pnlPanelLayout.createSequentialGroup()
-                            .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane1)
-                                .addGroup(pnlPanelLayout.createSequentialGroup()
-                                    .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblTitle5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(TituloAñadir)
-                                        .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(pnlPanelLayout.createSequentialGroup()
-                                            .addGap(32, 32, 32)
-                                            .addComponent(BotonAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(BotonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGap(0, 315, Short.MAX_VALUE)))
-                            .addContainerGap())
-                        .addGroup(pnlPanelLayout.createSequentialGroup()
-                            .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblTitle4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(0, 685, Short.MAX_VALUE)))))
+                        .addGap(32, 32, 32)
+                        .addComponent(BotonAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BotonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlPanelLayout.createSequentialGroup()
+                        .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTitle5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTitle4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTitle1))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TextFieldPrecioAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextFieldNombreAñadir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextFieldAutorAñadir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBackMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         pnlPanelLayout.setVerticalGroup(
             pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnBackMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addComponent(TextFieldNombreAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextFieldAutorAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TituloAñadir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextFieldPrecioAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(415, Short.MAX_VALUE))
-            .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlPanelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(TituloAñadir)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(lblTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(lblTitle4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(lblTitle5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(17, 17, 17)
-                    .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(BotonAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(BotonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlPanelLayout.createSequentialGroup()
+                        .addComponent(lblTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblTitle4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblTitle5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addGroup(pnlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotonAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlPanelLayout.createSequentialGroup()
+                        .addComponent(TextFieldNombreAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TextFieldAutorAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TextFieldPrecioAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .addComponent(pnlPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 717, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 594, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -345,7 +323,6 @@ public class ClientWindow extends JFrame {
     private javax.swing.JButton BotonActualizar;
     private javax.swing.JButton BotonAñadir;
     private javax.swing.JButton BotonEliminar;
-    private javax.swing.JButton BotonVolver;
     private javax.swing.JTable ListaLibros;
     private javax.swing.JTextField TextFieldAutorAñadir;
     private javax.swing.JTextField TextFieldNombreAñadir;
